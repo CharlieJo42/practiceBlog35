@@ -717,3 +717,41 @@ puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.6) lib/puma/server.rb:472:in `process_client'
 puma (4.3.6) lib/puma/server.rb:328:in `block in run'
 puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-09-21 18:49:00 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2480)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 4707)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    12: # #     <th></th>
+    13: # #   </tr>
+    14:  
+    15: # #   <% @articles.each do |article| %>
+    16: # #     <tr>
+    17: # #       <td><%= article.title %></td>
+    18: # #       <td><%= article.text %></td>
+  
+app/views/welcome/index.html.erb:15
+Started GET "/" for ::1 at 2020-09-21 18:49:48 -0400
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 1605)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 2708)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    13: #      <th></th>
+    14: #    </tr>
+    15:  
+    16: #    <% @articles.each do |article| %>
+    17: #      <tr>
+    18: #        <td><%= article.title %></td>
+    19: #        <td><%= article.text %></td>
+  
+app/views/welcome/index.html.erb:16
