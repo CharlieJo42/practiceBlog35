@@ -2002,3 +2002,108 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 22ms (Views: 19.2ms | ActiveRecord: 0.7ms | Allocations: 4448)
 
 
+Started GET "/articles/1/edit" for ::1 at 2020-09-21 19:31:00 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `edit'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 3.0ms | Allocations: 2789)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4274)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 12.3ms | ActiveRecord: 0.7ms | Allocations: 18257)
+
+
+Started GET "/articles/4/edit" for ::1 at 2020-09-21 19:31:13 -0400
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `edit'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 7.3ms | Allocations: 758)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1597)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 55.9ms | ActiveRecord: 0.4ms | Allocations: 5722)
+
+
+Started GET "/articles/4/edit" for ::1 at 2020-09-21 19:31:46 -0400
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `edit'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/_form.html.erb (Duration: 5.7ms | Allocations: 1072)
+  Rendered articles/edit.html.erb within layouts/application (Duration: 17.9ms | Allocations: 2420)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 40.9ms | ActiveRecord: 0.2ms | Allocations: 7457)
+
+
+Started GET "/articles/4/edit" for ::1 at 2020-09-21 19:31:52 -0400
+Processing by ArticlesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:16:in `edit'
+  Rendering articles/edit.html.erb within layouts/application
+  Rendered articles/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1117)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 28.1ms | ActiveRecord: 0.5ms | Allocations: 6128)
+
+
+Started PATCH "/articles/4" for ::1 at 2020-09-21 19:31:59 -0400
+Processing by ArticlesController#update as HTML
+  Parameters: {"authenticity_token"=>"sBheHDtcAV2L/WwInVY4lUJmPgYTHgOwoYWaZUM9rpy5pC1lXDQin5ZxNlP/O+ijKjBcipJtZaqzdjFSDKpRtg==", "article"=>{"title"=>"second entry", "text"=>"let's see if this works again!"}, "commit"=>"Update Article", "id"=>"4"}
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:39:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:41:in `update'
+  [1m[36mArticle Update (1.3ms)[0m  [1m[33mUPDATE "articles" SET "text" = ?, "updated_at" = ? WHERE "articles"."id" = ?[0m  [["text", "let's see if this works again!"], ["updated_at", "2020-09-21 23:31:59.467826"], ["id", 4]]
+  ↳ app/controllers/articles_controller.rb:41:in `update'
+  [1m[35m (93.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:41:in `update'
+Redirected to http://localhost:3000/articles/4
+Completed 302 Found in 113ms (ActiveRecord: 95.2ms | Allocations: 4931)
+
+
+Started GET "/articles/4" for ::1 at 2020-09-21 19:31:59 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:8:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 4]]
+  ↳ app/views/articles/show.html.erb:13
+  Rendered articles/show.html.erb within layouts/application (Duration: 64.8ms | Allocations: 10132)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 91ms (Views: 75.7ms | ActiveRecord: 4.6ms | Allocations: 14282)
+
+
+Started GET "/articles" for ::1 at 2020-09-21 19:32:01 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.7ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:12
+  Rendered articles/index.html.erb within layouts/application (Duration: 15.0ms | Allocations: 1154)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 56ms (Views: 46.6ms | ActiveRecord: 0.7ms | Allocations: 4873)
+
+
+Started DELETE "/articles/1" for ::1 at 2020-09-21 19:32:24 -0400
+Processing by ArticlesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iNfhFQVNORn+PjTf6h540Qtori4EsWqTBFYfRuyRHQ2Ba5JsYiUa2+OyboSIc6jnYz7MooXCDIkWpbRxowbiJw==", "id"=>"1"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:49:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+  [1m[36mArticle Destroy (3.0ms)[0m  [1m[31mDELETE FROM "articles" WHERE "articles"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/articles_controller.rb:50:in `destroy'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 3.5ms | Allocations: 4715)
+
+
+  
+ActiveRecord::InvalidForeignKey (SQLite3::ConstraintException: FOREIGN KEY constraint failed):
+  
+app/controllers/articles_controller.rb:50:in `destroy'
